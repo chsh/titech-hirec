@@ -5,6 +5,10 @@
   <%= @history_record.uid %>
 </p>
 
+<p>
+  <strong>schema</strong>
+  <%= @history_record.schema %>
+</p>
 <% HistoryRecord::FIELDS.each do |field| %>
     <p>
       <strong><%= t("activerecord.attributes.history_record.#{field}") %>:</strong>

@@ -15,6 +15,7 @@
   <tbody>
     <% @history_records.each do |history_record| %>
       <tr>
+        <td><%= history_record.schema %></td>
         <td><%= link_to history_record.uid, history_record_path(history_record.uid) %></td>
         <% HistoryRecord::FIELDS.each do |field| %>
           <td><%= history_record.send(field) %></td>
