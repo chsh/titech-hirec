@@ -1,2 +1,2 @@
-json.extract! history_record, :id, :uid, :data, :created_at, :updated_at
-json.url history_record_url(history_record, format: :json)
+json.extract! history_record, :uid, *HistoryRecord::FIELDS
+json.url history_record_url(history_record.uid, format: :json)
