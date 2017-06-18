@@ -49,7 +49,9 @@ class HistoryRecord < ApplicationRecord
         xlsx = Roo::Excelx.new(file)
         sheet = xlsx.sheet(0)
         sheet.each_row_streaming(offset: start_row) do |row|
-          attrs = map_fields(row.to_a.map { |w| w.blank? ? nil : w.to_s })
+          row_s = row.to_a.map { |w| w.blank? ? nil : w.to_s }
+          pp row_s
+          attrs = map_fields(row_s)
           HistoryRecord.where(uid: attrs[:uid]).first_or_create(attrs)
         end
       end
