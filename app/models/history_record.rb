@@ -48,4 +48,16 @@ class HistoryRecord < ApplicationRecord
       scope :uid_order, -> { order(:uid) }
     end
   end
+  concerning :SchemaFeature do
+    def num_year
+      return nil unless self.year.present?
+      self.year.gsub(/年度$/, '').gsub(/\[(.+?)\]/, '\1')
+    end
+
+    def schema
+      @schema ||= begin
+        "tta:#{self.uid}schema:dateCreated:\"#{self.num_year}\""
+      end
+    end
+  end
 end
