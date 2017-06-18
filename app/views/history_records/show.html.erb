@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>UID:</strong>
+  <strong><%= t('activerecord.attributes.history_record.uid') %>:</strong>
   <%= @history_record.uid %>
 </p>
 
 <% HistoryRecord::FIELDS.each do |field| %>
     <p>
-      <strong><%= field %>:</strong>
+      <strong><%= t("activerecord.attributes.history_record.#{field}") %>:</strong>
       <%= @history_record.send(field) %>
     </p>
 <% end %>
