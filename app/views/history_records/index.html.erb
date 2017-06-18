@@ -5,6 +5,7 @@
 <table class="table">
   <thead>
     <tr>
+      <th>Schema</th>
       <th><%= t('activerecord.attributes.history_record.uid') %></th>
       <% HistoryRecord::FIELDS.each do |field| %>
         <th><%= t("activerecord.attributes.history_record.#{field}") %></th>
