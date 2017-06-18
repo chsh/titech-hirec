@@ -1,0 +1,24 @@
+ja:
+  activerecord:
+    attributes:
+      history_record:
+        uid: "識別番号"
+        classification_l: "大分類"
+        classification_m: "小分類"
+        filename: "法人文書ファイル名"
+        year: "作成または取得年度"
+        accept_method: "受入方法"
+        creator: "作成または取得者"
+        source_1: "移管元:部局1"
+        source_2: "移管元:部局2"
+        source_3: "移管元:部局3"
+        accept_date: "受入年月日"
+        store_location_shelf_name: "保存場所:書庫名"
+        store_location_shelf_id1: "保存場所:初夏番号"
+        store_location_shelf_id2: "保存場所:棚番号"
+        media_type: "媒体の種別"
+        duplicatable: "利用可能な副生物"
+        use_limit: "利用制限の区分"
+        size: "サイズ"
+        old_maintainer: "旧管理者"
+        misc: "備考"

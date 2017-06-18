@@ -5,9 +5,9 @@
 <table class="table">
   <thead>
     <tr>
-      <th>UID</th>
+      <th><%= t('activerecord.attributes.history_record.uid') %></th>
       <% HistoryRecord::FIELDS.each do |field| %>
-        <th><%= field %></th>
+        <th><%= t("activerecord.attributes.history_record.#{field}") %></th>
       <% end %>
     </tr>
   </thead>
