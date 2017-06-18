@@ -43,6 +43,18 @@ class HistoryRecord < ApplicationRecord
       end
     end
   end
+  concerning :ImportXlsxFeature do
+    class_methods do
+      def import_xlsx(file, start_row)
+        xlsx = Roo::Excelx.new(file)
+        sheet = xlsx.sheet(0)
+        sheet.each_row_streaming(offset: start_row) do |row|
+          attrs = map_fields(row.to_a.map { |w| w.blank? ? nil : w.to_s })
+          HistoryRecord.where(uid: attrs[:uid]).first_or_create(attrs)
+        end
+      end
+    end
+  end
   concerning :SortFeature do
     included do
       scope :uid_order, -> { order(:uid) }
