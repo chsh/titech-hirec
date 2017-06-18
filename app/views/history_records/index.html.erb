@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>History Records</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>UID</th>
+      <% HistoryRecord::FIELDS.each do |field| %>
+        <th><%= field %></th>
+      <% end %>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @history_records.each do |history_record| %>
+      <tr>
+        <td><%= link_to history_record.uid, history_record_path(history_record.uid) %></td>
+        <% HistoryRecord::FIELDS.each do |field| %>
+          <td><%= history_record.send(field) %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New History Record', new_history_record_path %>
