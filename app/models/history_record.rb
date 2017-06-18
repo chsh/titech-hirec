@@ -56,7 +56,7 @@ class HistoryRecord < ApplicationRecord
 
     def schema
       @schema ||= begin
-        "tta:#{self.uid}schema:dateCreated:\"#{self.num_year}\""
+        "tta:#{self.uid} schema:dateCreated:\"#{self.num_year}\""
       end
     end
   end
